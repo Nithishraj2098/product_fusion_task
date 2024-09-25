@@ -21,3 +21,7 @@ set the "data_base" variable as your database name with the user credentials
 2. uvicorn main:app --host 0.0.0.0 --port 8000 --reload -> use what port you want
 
 3. open your browser and type localhost:8000/docs  -> To open swagger 
+
+#Postman
+Before  checking in post man
+make authentication with Bearer Token (not for login and signup)

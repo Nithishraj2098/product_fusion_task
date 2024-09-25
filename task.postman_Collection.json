@@ -44,7 +44,13 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5NTY2MTEsInN1YiI6IjcifQ.ClvkQhfh2FMHQn8cjrgftRsAo2-4a9c4t88d-NS-am8",
+						"token_type": "bearer",
+						"status": 1,
+						"msg": "Successful login",
+						"user_name": "admin@gmail.com"
+					}]
 				},
 				{
 					"name": "signup_owner",
@@ -95,7 +101,10 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "successfully signed up."
+					}]
 				},
 				{
 					"name": "singnup_member",
@@ -156,7 +165,10 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "successfully signed up."
+					}]
 				}
 			],
 			"description": "Both memeber and user uses thi singup and signin api  \nwhere the email id is the unique identifier  \n  \nowner signup:\n\nwithout org_id and role_id and orgnaization name as prefilled  \n  \nmember signup:\n\nhaving org_id and role_id and orgnaization name as prefilled  \nThis is prefilled by the link that member used to signup"
@@ -214,7 +226,10 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Password changed successfully"
+					}]
 				},
 				{
 					"name": "change password",
@@ -261,7 +276,10 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Your password has been changed"
+					}]
 				},
 				{
 					"name": "invite member",
@@ -308,10 +326,13 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Invite link send successfully."
+					}]
 				},
 				{
-					"name": "New Request",
+					"name": "create_rolet",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -350,10 +371,13 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Role added successfully."
+					}]
 				},
 				{
-					"name": "New Request",
+					"name": "update_member_rolet",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -397,7 +421,10 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Member updated successfully."
+					}]
 				},
 				{
 					"name": "organization_member count",
@@ -439,7 +466,53 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Success",
+						"data": {
+							"total_count": 7,
+							"totalPage": 1,
+							"size": 10,
+							"current_page": 1,
+							"items": [
+								{
+									"org_id": 7,
+									"org_name": "Admin cart",
+									"member_count": 1
+								},
+								{
+									"org_id": 6,
+									"org_name": "Admin cart",
+									"member_count": 1
+								},
+								{
+									"org_id": 5,
+									"org_name": "Admin cart",
+									"member_count": 2
+								},
+								{
+									"org_id": 4,
+									"org_name": "Admin mart",
+									"member_count": 4
+								},
+								{
+									"org_id": 3,
+									"org_name": "1",
+									"member_count": 1
+								},
+								{
+									"org_id": 2,
+									"org_name": "TNR",
+									"member_count": 3
+								},
+								{
+									"org_id": 1,
+									"org_name": "TNR",
+									"member_count": 1
+								}
+							]
+						}
+					}]
 				},
 				{
 					"name": "Organization_role_member_count",
@@ -481,7 +554,78 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Success",
+						"data": {
+							"total_count": 10,
+							"totalPage": 1,
+							"size": 10,
+							"current_page": 1,
+							"items": [
+								{
+									"org_id": 7,
+									"org_name": "Admin cart",
+									"role_name": "Owner",
+									"member_count": 1
+								},
+								{
+									"org_id": 6,
+									"org_name": "Admin cart",
+									"role_name": "Owner",
+									"member_count": 1
+								},
+								{
+									"org_id": 5,
+									"org_name": "Admin cart",
+									"role_name": "Tenet",
+									"member_count": 2
+								},
+								{
+									"org_id": 4,
+									"org_name": "Admin mart",
+									"role_name": "Owner",
+									"member_count": 1
+								},
+								{
+									"org_id": 4,
+									"org_name": "Admin mart",
+									"role_name": "Tenet",
+									"member_count": 2
+								},
+								{
+									"org_id": 4,
+									"org_name": "Admin mart",
+									"role_name": "New Tenent",
+									"member_count": 1
+								},
+								{
+									"org_id": 3,
+									"org_name": "1",
+									"role_name": "Owner",
+									"member_count": 1
+								},
+								{
+									"org_id": 2,
+									"org_name": "TNR",
+									"role_name": "Owner",
+									"member_count": 1
+								},
+								{
+									"org_id": 2,
+									"org_name": "TNR",
+									"role_name": "Tenet",
+									"member_count": 2
+								},
+								{
+									"org_id": 1,
+									"org_name": "TNR",
+									"role_name": "Owner",
+									"member_count": 1
+								}
+							]
+						}
+					}]
 				},
 				{
 					"name": "role_wise_member",
@@ -523,7 +667,28 @@
 							]
 						}
 					},
-					"response": []
+					"response": [{
+						"status": 1,
+						"msg": "Success",
+						"data": {
+							"total_count": 2,
+							"totalPage": 1,
+							"size": 10,
+							"current_page": 1,
+							"items": [
+								{
+									"role_id": 12,
+									"role_name": "New Tenent",
+									"user_count": 1
+								},
+								{
+									"role_id": 8,
+									"role_name": "Tenet",
+									"user_count": 3
+								}
+							]
+						}
+					}]
 				}
 			],
 			"description": "Here Owner selects the member by the dropdown member  \nand try to change the password for the member"
