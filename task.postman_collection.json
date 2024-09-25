@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "c79a0b76-bce2-4fbd-a329-0468ea4e8759",
+		"name": "task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26889152"
+	},
+	"item": [
+		{
+			"name": "login file",
+			"item": [
+				{
+					"name": "with_valid_credintials",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.1.117:8007/login/access-token",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"login",
+								"access-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup_owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin_demo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "96545872136",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "organization_name",
+									"value": "Admin cart",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.1.117:8007/signup",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singnup_member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "member_demo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "9654582222",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "organization_name",
+									"value": "Admin cart",
+									"type": "text"
+								},
+								{
+									"key": "org_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "192.168.1.117:8007/signup",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Both memeber and user uses thi singup and signin api  \nwhere the email id is the unique identifier  \n  \nowner signup:\n\nwithout org_id and role_id and orgnaization name as prefilled  \n  \nmember signup:\n\nhaving org_id and role_id and orgnaization name as prefilled  \nThis is prefilled by the link that member used to signup"
+		},
+		{
+			"name": "user file",
+			"item": [
+				{
+					"name": "reset_password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "memberID",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "1234",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.117:8007/reset_password",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"reset_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.117:8007/change_password",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"change_password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invite member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "member1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.117:8007/invite_member",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"invite_member"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role_name",
+									"value": "New Tenent",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.117:8007/create_role",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"create_role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "member_id",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.1.117:8007/update_member_role",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"update_member_role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization_member count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.117:8007/org_members?page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"org_members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Organization_role_member_count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.117:8007/org_role_members?page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"org_role_members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role_wise_member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mjc5MzkyMDAsInN1YiI6IjcifQ.x0J7XgWXFVakFI_jR3taEOg69XGEVSifp0obFrZTvhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.1.117:8007/role_wise_user?page=1&size=10",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"1",
+								"117"
+							],
+							"port": "8007",
+							"path": [
+								"role_wise_user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Here Owner selects the member by the dropdown member  \nand try to change the password for the member"
+		}
+	]
+}
