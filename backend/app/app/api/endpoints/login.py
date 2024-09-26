@@ -35,7 +35,8 @@ async def login(db:Session = Depends(deps.get_db)
             return {"status": 0, "msg": "Invalid password."}
         
         token = create_access_token(getUser.id)  # Ensure data structure is correct
-        msg ="""Welcome back.
+        msg ="""Subject: Welcome Back Buddy\n\n 
+                Welcome back.
                 Have a good day
                 
                 if the the login was not by you. Please update the password ,
@@ -129,7 +130,8 @@ async def signup(db:Session=Depends(deps.get_db),
                     invite your members using below link
                     invite link: {link}"""
         else:
-            msg = """Thanks for joining our organization
+            msg = """Subject: Thanks for joining\n\n 
+                     Thanks for joining our organization
                       Have a good day"""
         res = await send_mail(receiver_email=email,message=msg)
         return {"status":1,"msg":"successfully signed up."}

@@ -25,3 +25,8 @@ set the "data_base" variable as your database name with the user credentials
 #Postman
 Before  checking in post man
 make authentication with Bearer Token (not for login and signup)
+
+
+#ACTIVATE ENV
+
+source env/bin/activate

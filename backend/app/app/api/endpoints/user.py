@@ -40,7 +40,8 @@ async def resetPassword(db:Session=Depends(deps.get_db),
                 else:
                     checkMember.user.password = get_password_hash(new_password)
                     db.commit()
-                    msg ="""Your password was reset by admin .
+                    msg ="""Subject: Password alert\n\n 
+                            Your password was reset by admin .
                             Please make sure you having updated password while login."""
                     res = await send_mail(receiver_email=checkMember.user.email,message=msg)
                     return {"status":1,"msg":"Password changed successfully"}
@@ -100,7 +101,8 @@ async def inviteMember(db:Session=Depends(deps.get_db),
                     signup page with our customized org_id and role_id"""
 
 
-                    msg = f"""Hai, Hope all are going well
+                    msg = f"""Subject: Invite to join\n\n 
+                              Hai, Hope all are going well
                               Our beloved Owner Like you to 
                               join our organization
                               
